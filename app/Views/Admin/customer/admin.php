@@ -31,6 +31,11 @@
     <link rel="stylesheet" href="/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Argon CSS -->
     <link rel="stylesheet" href="/assets/css/argon.css?v=1.2.0" type="text/css">
+    <link rel="stylesheet" href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -148,13 +153,10 @@
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <!-- Card header -->
-                        <div class="card-header border-0">
-                            <h3 class="mb-0">All Customers</h3>
-                        </div>
                         <!-- Light table -->
                         <div class="table-responsive">
-                            <table class="table align-items-center table-flush">
+                            <input type="text" name="keyword" id="">
+                            <table class="table align-items-center table-flush" id="example">
                                 <thead class="thead-light">
                                     <tr>
                                         <th scope="col" class="sort" data-sort="name">Customer Name</th>
@@ -163,28 +165,20 @@
                                         <th scope="col" class="sort" data-sort="city">Customer Email</th>
                                     </tr>
                                 </thead>
-                                <tbody class="list">
+                                <tbody>
                                     <?php foreach ($customer as $customer) : ?>
                                         <tr>
-                                            <th scope="row">
-                                                <div class="media-body">
-                                                    <span class="name mb-0 text-sm"><?= $customer['customer_name'] ?></span>
-                                                </div>
-                                            </th>
                                             <td>
-                                                <span class="badge badge-dot mr-4">
-                                                    <span class="status"><?= $customer['customer_telp'] ?></span>
-                                                </span>
+                                                <?= $customer['customer_name']; ?>
                                             </td>
                                             <td>
-                                                <span class="badge badge-dot mr-4">
-                                                    <span class="status"><?= $customer['customer_address'] ?></span>
-                                                </span>
+                                                <?= $customer['customer_telp'] ?>
                                             </td>
                                             <td>
-                                                <span class="badge badge-dot mr-4">
-                                                    <span class="status"><?= $customer['email'] ?></span>
-                                                </span>
+                                                <?= $customer['customer_address'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $customer['email'] ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -221,19 +215,21 @@
                 </div>
             </div>
             <!-- Footer -->
-
         </div>
     </div>
+
     <!-- Argon Scripts -->
     <!-- Core -->
     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/vendor/js-cookie/js.cookie.js"></script>
     <script src="/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="/assets/js/style.js"></script>
     <script src="/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
     <!-- Argon JS -->
     <script src="/assets/js/argon.js?v=1.2.0"></script>
     <script src="/assets/js/style.js"></script>
+    <script src="cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 </body>
 
 </html>

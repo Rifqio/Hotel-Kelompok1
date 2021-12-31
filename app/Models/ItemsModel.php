@@ -37,4 +37,5 @@ class ItemsModel extends Model
     {
         return $this->db->table('items')->where(['items_id' => $id])->update($data);
     }
+
 }

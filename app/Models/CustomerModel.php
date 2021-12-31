@@ -48,4 +48,9 @@ class CustomerModel extends Model
     {
         return $this->db->table('customer')->where(['customer_id' => $customer_id])->update($data);
     }
+
+    public function search($keyword)
+    {
+        return $this->table('customer')->like('customer_name',$keyword)->orLike('customer_telp',$keyword)->orLike('customer_address',$keyword);
+    }
 }

@@ -110,11 +110,11 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col col-md-10">
-            <h1 class="display-2 w-full text-white"><?= $item['items_name'] ?></h1>
+            <h1 class="display-2 text-white"><?= $item['items_name'] ?></h1>
             <p class="text-white mt-0 mb-5"><?= $item['items_desc'] ?></p>
-            <div class="d-flex w-full">
-              <a href="<?= base_url('Admin/items/edit/' . $item['items_id']) ?>" class="btn btn-warning">Edit</a>
-              <a href="<?= base_url('Admin/items/delete/' . $item['items_id']) ?>" onclick="return confirm('Are you sure?');" class="btn btn-danger">Delete</a>
+            <div class="d-flex">
+            <a href="<?= base_url('Admin/items/edit/' . $item['items_id']) ?>" class="btn btn-warning">Edit </a>
+            <a href="<?= base_url('Admin/items/delete/' . $item['items_id']) ?>" onclick="return confirm('Are you sure?');" class="btn btn-danger">Delete</a>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h1 class="mb-0">Items Details</h1><br>
+                  <h1 class="mb-0">Items Type</h1><br>
                 </div>
               </div>
             </div>
@@ -164,6 +164,21 @@
                 <textarea disabled style="Background-color:#fff;" rows="5" class="form-control"><?= $item['items_facility'] ?></textarea>
               </div>
             </div>
+            <div class="row px-4">
+
+              <div class="col-lg-4 py-3 text-center justify-center">
+                <!-- <label class="form-control-label">Gambar 1</label> -->
+                <img class="card-img justify-center i" style="background-size: cover;" src="<?= $item['items_thumbnail'] ?>" alt="Card image cap">
+              </div>
+              <div class="col-lg-4 py-3 text-center justify-center">
+                <!-- <label class="form-control-label">Gambar 1</label> -->
+                <img class="card-img justify-center i" style="background-size: cover;" src="<?= $item['items_thumbnail'] ?>" alt="Card image cap">
+              </div>
+
+
+
+            </div>
+
 
             </form>
           </div>

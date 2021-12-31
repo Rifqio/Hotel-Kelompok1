@@ -16,6 +16,14 @@ class Customer extends BaseController
 
     public function index()
     {
+        $keyword = $this->request->getGet('keyword');
+        if($keyword)
+        {
+            $data = $this->customerModel->search($keyword);
+        } else 
+        {
+            $data = $this->customerModel;
+        }
         if (in_groups('admin')) {
             $data = [
                 'admin' => $this->adminModel->getAdminByUser(user_id()),
@@ -39,6 +47,7 @@ class Customer extends BaseController
         // $data['users'] = $query->getResult();
         return view('User/editProfile', $data);
     }
+
 
     public function updateCustomer()
     {
