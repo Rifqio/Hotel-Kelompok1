@@ -111,6 +111,9 @@
                                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                                     <li class="breadcrumb-item"><a href="#">Customers List</a></li>
+                                    <!-- TEST JQUERY -->
+                                   
+                                    <!-- TEST JQUERY -->
                                 </ol>
                             </nav>
                         </div>
@@ -154,8 +157,8 @@
                 <div class="col">
                     <div class="card">
                         <!-- Light table -->
+                        <input class="form-control" id="myInput" type="text" placeholder="Search by name...">
                         <div class="table-responsive">
-                            <input type="text" name="keyword" id="">
                             <table class="table align-items-center table-flush" id="example">
                                 <thead class="thead-light">
                                     <tr>
@@ -165,7 +168,9 @@
                                         <th scope="col" class="sort" data-sort="city">Customer Email</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <!-- TEST JQUERY -->
+                                <tbody id="myTable" class="list">
+                                    <!-- TEST JQUERY -->
                                     <?php foreach ($customer as $customer) : ?>
                                         <tr>
                                             <td>
@@ -229,7 +234,20 @@
     <!-- Argon JS -->
     <script src="/assets/js/argon.js?v=1.2.0"></script>
     <script src="/assets/js/style.js"></script>
-    <script src="cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+    <!-- TEST JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <!-- TEST JQUERY -->
 </body>
 
 </html>

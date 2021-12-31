@@ -165,21 +165,13 @@
               </div>
             </div>
             <div class="row px-4">
-
-              <div class="col-lg-4 py-3 text-center justify-center">
-                <!-- <label class="form-control-label">Gambar 1</label> -->
-                <img class="card-img justify-center i" style="background-size: cover;" src="<?= $item['items_thumbnail'] ?>" alt="Card image cap">
-              </div>
-              <div class="col-lg-4 py-3 text-center justify-center">
-                <!-- <label class="form-control-label">Gambar 1</label> -->
-                <img class="card-img justify-center i" style="background-size: cover;" src="<?= $item['items_thumbnail'] ?>" alt="Card image cap">
-              </div>
-
-
-
+              <?php foreach ($image as $image) : ?>
+                <div class="col-lg-4 py-3">
+                  <!-- <label class="form-control-label">Gambar 1</label> -->
+                  <img class="card-img" style="background-size: cover;" src="<?= $image['items_image'] ?>" alt="Card image cap">
+                </div>
+              <?php endforeach; ?>
             </div>
-
-
             </form>
           </div>
         </div>
